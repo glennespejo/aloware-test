@@ -64,6 +64,10 @@
                 __this.loader = true;
 				axios.post('/api/v1/comment/add', {comment: this.newComment, post_id: post.id}).then(response => {
 					__this.newComment = ''
+                    __this.loader = false;
+                    this.$noty.success(response.data.message,{
+                        timeout: 2000,
+                    });
 				});
 			}
         }

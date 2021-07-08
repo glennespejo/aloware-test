@@ -30,7 +30,6 @@ class Post extends BaseModel
 
     public function addComment($data)
 	{
-        dd($data);
 		$comment = (new Comment())->forceFill($data);
 		$comment->user_id = auth()->id();
 		return $this->comments()->save($comment);
